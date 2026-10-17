@@ -1,0 +1,14 @@
+{
+  "archive": "SE200778_PhamVoHoangNhan_Asgn01.tar.gz",
+  "pdf": "SE200778_PhamVoHoangNhan_Asgn01_BaoCao.pdf",
+  "files": 41,
+  "original_files_unchanged": 31,
+  "archive_members_verified": true,
+  "task1_pass": true,
+  "task2_pass": true,
+  "run": "practice/output/runs/20261017-022924",
+  "archive_sha256": "0b227b619366e801f426ce74decbd67b0cff822f7777da6b4233a57cd8eabdb5",
+  "pdf_sha256": "2a53388b6874968d2ce3cb1b7cabf8d5675474fd5ff7af02a2dcc3e7d0dc5abb",
+  "course_submission_rules": "to be reviewed by student against assignment sections IV-V",
+  "lms_submission": "not performed"
+}

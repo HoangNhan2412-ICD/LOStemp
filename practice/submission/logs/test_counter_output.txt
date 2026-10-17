@@ -1,0 +1,292 @@
++ insmod ./counter_driver.ko
+counter_driver: loaded major=10 minor=125
++ grep '^counter_driver ' /proc/modules
+counter_driver 16384 0 - Live 0x7f000000 (O)
++ test -c /dev/counter
++ ls -l /dev/counter
+crw-------    1 root     0          10, 125 Oct 17 06:29 [1;35m/dev/counter[m
++ echo 'SNAPSHOT BEFORE WRITE'
+SNAPSHOT BEFORE WRITE
++ cat /proc/counter_info
+counter: 0
+read_count: 0
+write_count: 0
++ cat /dev/counter
+counter_driver: read snapshot=0
++ test 0 '=' 0
++ cat /dev/counter
+counter_driver: read snapshot=1
++ test 1 '=' 1
++ echo 100
+counter_driver: set=100
++ echo 'SNAPSHOT AFTER WRITE'
+SNAPSHOT AFTER WRITE
++ cat /proc/counter_info
+counter: 100
+read_count: 2
+write_count: 1
++ cat /dev/counter
+counter_driver: read snapshot=100
++ test 100 '=' 100
++ echo 0
+counter_driver: set=0
++ echo 'SNAPSHOT AFTER RESET'
+SNAPSHOT AFTER RESET
++ cat /proc/counter_info
+counter: 0
+read_count: 3
+write_count: 2
++ cat /dev/counter
+counter_driver: read snapshot=0
++ test 0 '=' 0
++ ./counter_test
+PASS fd >= 0
+counter_driver: set=100
+PASS write(fd,"100\n",4) == 4
+PASS read(fd,buf,0) == 0
+PASS syscall(SYS_read,fd,(void *)1,4) == -1 && errno == EFAULT
+counter_driver: read snapshot=100
+PASS read(fd,buf,1) == 1
+PASS read(fd,buf+1,31) == 3
+PASS !strcmp(buf,"100\n")
+PASS read(fd,&byte,1) == 0
+PASS f != NULL
+PASS fscanf(f,"counter: %d\nread_count: %d\nwrite_count: %d",value,reads,writes) == 3
+COUNTER value=101 reads=5 writes=3
+PASS v == 101
+PASS write(fd,"-1",2) == -1 && errno == EINVAL
+PASS write(fd,"abc",3) == -1 && errno == EINVAL
+PASS write(fd,"1x",2) == -1 && errno == EINVAL
+PASS write(fd,"1\0x",3) == -1 && errno == EINVAL
+PASS write(fd,"2147483648",10) == -1 && errno == EINVAL
+PASS syscall(SYS_write,fd,(void *)1,4) == -1 && errno == EFAULT
+counter_driver: set=2147483647
+PASS write(fd,"2147483647",10) == 10
+PASS rd >= 0
+PASS read(rd,buf,sizeof(buf)) == -1 && errno == EOVERFLOW
+counter_driver: set=0
+PASS write(fd,"0",1) == 1
+PASS f != NULL
+PASS fscanf(f,"counter: %d\nread_count: %d\nwrite_count: %d",value,reads,writes) == 3
+COUNTER value=0 reads=5 writes=5
+PASS v == 0
+PASS children[i]>=0
+PASS children[i]>=0
+PASS children[i]>=0
+counter_driver: read snapshot=0
+counter_driver: read snapshot=1
+PASS children[i]>=0
+PASS children[i]>=0
+PASS children[i]>=0
+counter_driver: read snapshot=2
+counter_driver: read snapshot=3
+counter_driver: read snapshot=4
+counter_driver: read snapshot=5
+PASS children[i]>=0
+counter_driver: read snapshot=6
+counter_driver: read snapshot=7
+counter_driver: read snapshot=8
+counter_driver: read snapshot=9
+counter_driver: read snapshot=10
+counter_driver: read snapshot=11
+counter_driver: read snapshot=12
+counter_driver: read snapshot=13
+counter_driver: read snapshot=14
+counter_driver: read snapshot=15
+counter_driver: read snapshot=16
+counter_driver: read snapshot=17
+counter_driver: read snapshot=18
+counter_driver: read snapshot=19
+counter_driver: read snapshot=20
+counter_driver: read snapshot=21
+counter_driver: read snapshot=22
+counter_driver: read snapshot=23
+counter_driver: read snapshot=24
+counter_driver: read snapshot=25
+counter_driver: read snapshot=26
+counter_driver: read snapshot=27
+counter_driver: read snapshot=28
+counter_driver: read snapshot=29
+counter_driver: read snapshot=30
+counter_driver: read snapshot=31
+counter_driver: read snapshot=32
+counter_driver: read snapshot=33
+counter_driver: read snapshot=34
+counter_driver: read snapshot=35
+counter_driver: read snapshot=36
+counter_driver: read snapshot=37
+counter_driver: read snapshot=38
+counter_driver: read snapshot=39
+counter_driver: read snapshot=40
+counter_driver: read snapshot=41
+counter_driver: read snapshot=42
+counter_driver: read snapshot=43
+counter_driver: read snapshot=44
+counter_driver: read snapshot=45
+counter_driver: read snapshot=46
+counter_driver: read snapshot=47
+counter_driver: read snapshot=48
+counter_driver: read snapshot=49
+counter_driver: read snapshot=50
+counter_driver: read snapshot=51
+counter_driver: read snapshot=52
+counter_driver: read snapshot=53
+counter_driver: read snapshot=54
+counter_driver: read snapshot=55
+counter_driver: read snapshot=56
+counter_driver: read snapshot=57
+counter_driver: read snapshot=58
+counter_driver: read snapshot=59
+PASS waitpid(children[i],&status,0)==children[i]
+PASS WIFEXITED(status) && WEXITSTATUS(status)==0
+PASS waitpid(children[i],&status,0)==children[i]
+PASS WIFEXITED(status) && WEXITSTATUS(status)==0
+PASS children[i]>=0
+counter_driver: read snapshot=60
+counter_driver: read snapshot=61
+counter_driver: read snapshot=62
+counter_driver: read snapshot=63
+counter_driver: read snapshot=64
+counter_driver: read snapshot=65
+counter_driver: read snapshot=66
+counter_driver: read snapshot=67
+counter_driver: read snapshot=68
+counter_driver: read snapshot=69
+counter_driver: read snapshot=70
+counter_driver: read snapshot=71
+counter_driver: read snapshot=72
+counter_driver: read snapshot=73
+counter_driver: read snapshot=74
+counter_driver: read snapshot=75
+counter_driver: read snapshot=76
+counter_driver: read snapshot=77
+counter_driver: read snapshot=78
+counter_driver: read snapshot=79
+PASS waitpid(children[i],&status,0)==children[i]
+PASS WIFEXITED(status) && WEXITSTATUS(status)==0
+PASS waitpid(children[i],&status,0)==children[i]
+PASS WIFEXITED(status) && WEXITSTATUS(status)==0
+PASS f != NULL
+PASS fscanf(f,"counter: %d\nread_count: %d\nwrite_count: %d",value,reads,writes) == 3
+COUNTER value=80 reads=85 writes=5
+PASS endv==80 && endr==r+80 && endw==w
+TASK2_C_TESTS_PASS
++ exec
++ rmmod counter_driver
+rmmod: remove 'counter_driver': Resource temporarily unavailable
++ grep '^counter_driver ' /proc/modules
+counter_driver 16384 1 - Live 0x7f000000 (O)
++ exec
++ rmmod counter_driver
+counter_driver: cleanup complete
++ grep -q '^counter_driver ' /proc/modules
++ test '!' -e /proc/counter_info
++ test '!' -e /sys/class/misc/counter
++ test '!' -e /dev/counter
++ dmesg
++ grep counter_driver:
+counter_driver: loaded major=10 minor=125
+counter_driver: read snapshot=0
+counter_driver: read snapshot=1
+counter_driver: set=100
+counter_driver: read snapshot=100
+counter_driver: set=0
+counter_driver: read snapshot=0
+counter_driver: set=100
+counter_driver: read snapshot=100
+counter_driver: set=2147483647
+counter_driver: set=0
+counter_driver: read snapshot=0
+counter_driver: read snapshot=1
+counter_driver: read snapshot=2
+counter_driver: read snapshot=3
+counter_driver: read snapshot=4
+counter_driver: read snapshot=5
+counter_driver: read snapshot=6
+counter_driver: read snapshot=7
+counter_driver: read snapshot=8
+counter_driver: read snapshot=9
+counter_driver: read snapshot=10
+counter_driver: read snapshot=11
+counter_driver: read snapshot=12
+counter_driver: read snapshot=13
+counter_driver: read snapshot=14
+counter_driver: read snapshot=15
+counter_driver: read snapshot=16
+counter_driver: read snapshot=17
+counter_driver: read snapshot=18
+counter_driver: read snapshot=19
+counter_driver: read snapshot=20
+counter_driver: read snapshot=21
+counter_driver: read snapshot=22
+counter_driver: read snapshot=23
+counter_driver: read snapshot=24
+counter_driver: read snapshot=25
+counter_driver: read snapshot=26
+counter_driver: read snapshot=27
+counter_driver: read snapshot=28
+counter_driver: read snapshot=29
+counter_driver: read snapshot=30
+counter_driver: read snapshot=31
+counter_driver: read snapshot=32
+counter_driver: read snapshot=33
+counter_driver: read snapshot=34
+counter_driver: read snapshot=35
+counter_driver: read snapshot=36
+counter_driver: read snapshot=37
+counter_driver: read snapshot=38
+counter_driver: read snapshot=39
+counter_driver: read snapshot=40
+counter_driver: read snapshot=41
+counter_driver: read snapshot=42
+counter_driver: read snapshot=43
+counter_driver: read snapshot=44
+counter_driver: read snapshot=45
+counter_driver: read snapshot=46
+counter_driver: read snapshot=47
+counter_driver: read snapshot=48
+counter_driver: read snapshot=49
+counter_driver: read snapshot=50
+counter_driver: read snapshot=51
+counter_driver: read snapshot=52
+counter_driver: read snapshot=53
+counter_driver: read snapshot=54
+counter_driver: read snapshot=55
+counter_driver: read snapshot=56
+counter_driver: read snapshot=57
+counter_driver: read snapshot=58
+counter_driver: read snapshot=59
+counter_driver: read snapshot=60
+counter_driver: read snapshot=61
+counter_driver: read snapshot=62
+counter_driver: read snapshot=63
+counter_driver: read snapshot=64
+counter_driver: read snapshot=65
+counter_driver: read snapshot=66
+counter_driver: read snapshot=67
+counter_driver: read snapshot=68
+counter_driver: read snapshot=69
+counter_driver: read snapshot=70
+counter_driver: read snapshot=71
+counter_driver: read snapshot=72
+counter_driver: read snapshot=73
+counter_driver: read snapshot=74
+counter_driver: read snapshot=75
+counter_driver: read snapshot=76
+counter_driver: read snapshot=77
+counter_driver: read snapshot=78
+counter_driver: read snapshot=79
+counter_driver: cleanup complete
++ dmesg
++ grep 'counter_driver: cleanup complete'
+counter_driver: cleanup complete
++ insmod ./counter_driver.ko
+counter_driver: loaded major=10 minor=125
++ cat /dev/counter
+counter_driver: read snapshot=0
++ test 0 '=' 0
++ rmmod counter_driver
+counter_driver: cleanup complete
++ echo TASK2_SCRIPT_PASS
+TASK2_SCRIPT_PASS
+ASM1_TASK2_RC=0

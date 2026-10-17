@@ -1,0 +1,319 @@
+make: Entering directory '/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15'
+arm-none-linux-gnueabihf-ld: warning: arch/arm/vdso/datapage.o: missing .note.GNU-stack section implies executable stack
+arm-none-linux-gnueabihf-ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+egrep: warning: egrep is obsolescent; using grep -E
+In file included from /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/rculist.h:10,
+                 from /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/pid.h:5,
+                 from /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/sched.h:14,
+                 from /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/locking/semaphore.c:30:
+In function ‘__list_add’,
+    inlined from ‘list_add_tail’ at /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/list.h:100:2,
+    inlined from ‘__down_common’ at /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/locking/semaphore.c:213:2,
+    inlined from ‘__down’ at /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/locking/semaphore.c:241:2:
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/list.h:70:20: warning: storing the address of local variable ‘waiter’ in ‘((struct list_head *)sem)[1].prev’ [-Wdangling-pointer=]
+   70 |         next->prev = new;
+      |         ~~~~~~~~~~~^~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/locking/semaphore.c: In function ‘__down’:
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/locking/semaphore.c:211:33: note: ‘waiter’ declared here
+  211 |         struct semaphore_waiter waiter;
+      |                                 ^~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/locking/semaphore.c:239:55: note: ‘sem’ declared here
+  239 | static noinline void __sched __down(struct semaphore *sem)
+      |                                     ~~~~~~~~~~~~~~~~~~^~~
+In function ‘__list_add’,
+    inlined from ‘list_add_tail’ at /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/list.h:100:2,
+    inlined from ‘__down_common’ at /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/locking/semaphore.c:213:2,
+    inlined from ‘__down_killable’ at /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/locking/semaphore.c:251:9:
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/list.h:70:20: warning: storing the address of local variable ‘waiter’ in ‘((struct list_head *)sem)[1].prev’ [-Wdangling-pointer=]
+   70 |         next->prev = new;
+      |         ~~~~~~~~~~~^~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/locking/semaphore.c: In function ‘__down_killable’:
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/locking/semaphore.c:211:33: note: ‘waiter’ declared here
+  211 |         struct semaphore_waiter waiter;
+      |                                 ^~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/locking/semaphore.c:249:63: note: ‘sem’ declared here
+  249 | static noinline int __sched __down_killable(struct semaphore *sem)
+      |                                             ~~~~~~~~~~~~~~~~~~^~~
+In function ‘__list_add’,
+    inlined from ‘list_add_tail’ at /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/list.h:100:2,
+    inlined from ‘__down_common’ at /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/locking/semaphore.c:213:2,
+    inlined from ‘__down_timeout’ at /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/locking/semaphore.c:256:9:
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/list.h:70:20: warning: storing the address of local variable ‘waiter’ in ‘((struct list_head *)sem)[1].prev’ [-Wdangling-pointer=]
+   70 |         next->prev = new;
+      |         ~~~~~~~~~~~^~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/locking/semaphore.c: In function ‘__down_timeout’:
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/locking/semaphore.c:211:33: note: ‘waiter’ declared here
+  211 |         struct semaphore_waiter waiter;
+      |                                 ^~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/locking/semaphore.c:254:62: note: ‘sem’ declared here
+  254 | static noinline int __sched __down_timeout(struct semaphore *sem, long timeout)
+      |                                            ~~~~~~~~~~~~~~~~~~^~~
+In function ‘__list_add’,
+    inlined from ‘list_add_tail’ at /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/list.h:100:2,
+    inlined from ‘__down_common’ at /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/locking/semaphore.c:213:2,
+    inlined from ‘__down_interruptible’ at /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/locking/semaphore.c:246:9:
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/list.h:70:20: warning: storing the address of local variable ‘waiter’ in ‘((struct list_head *)sem)[1].prev’ [-Wdangling-pointer=]
+   70 |         next->prev = new;
+      |         ~~~~~~~~~~~^~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/locking/semaphore.c: In function ‘__down_interruptible’:
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/locking/semaphore.c:211:33: note: ‘waiter’ declared here
+  211 |         struct semaphore_waiter waiter;
+      |                                 ^~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/locking/semaphore.c:244:68: note: ‘sem’ declared here
+  244 | static noinline int __sched __down_interruptible(struct semaphore *sem)
+      |                                                  ~~~~~~~~~~~~~~~~~~^~~
+In file included from /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/rculist.h:10,
+                 from /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/pid.h:5,
+                 from /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/sched.h:14,
+                 from /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/ratelimit.h:6,
+                 from /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/dev_printk.h:16,
+                 from /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/device.h:15,
+                 from /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/node.h:18,
+                 from /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/cpu.h:17,
+                 from /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/compaction.c:11:
+In function ‘__list_cut_position’,
+    inlined from ‘list_cut_position’ at /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/list.h:400:3,
+    inlined from ‘move_freelist_tail’ at /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/compaction.c:1310:3:
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/list.h:370:21: warning: storing the address of local variable ‘sublist’ in ‘*&freepage_6(D)->D.16773.D.16710.lru.next’ [-Wdangling-pointer=]
+  370 |         entry->next = list;
+      |         ~~~~~~~~~~~~^~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/compaction.c: In function ‘move_freelist_tail’:
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/compaction.c:1307:19: note: ‘sublist’ declared here
+ 1307 |         LIST_HEAD(sublist);
+      |                   ^~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/list.h:24:26: note: in definition of macro ‘LIST_HEAD’
+   24 |         struct list_head name = LIST_HEAD_INIT(name)
+      |                          ^~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/compaction.c:1305:61: note: ‘freepage’ declared here
+ 1305 | move_freelist_tail(struct list_head *freelist, struct page *freepage)
+      |                                                ~~~~~~~~~~~~~^~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c: In function ‘mem_init_print_info’:
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8163:27: warning: comparison between two arrays [-Warray-compare]
+ 8163 |                 if (start <= pos && pos < end && size > adj) \
+      |                           ^~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8167:9: note: in expansion of macro ‘adj_init_size’
+ 8167 |         adj_init_size(__init_begin, __init_end, init_data_size,
+      |         ^~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8163:27: note: use ‘&__init_begin[0] <= &_sinittext[0]’ to compare the addresses
+ 8163 |                 if (start <= pos && pos < end && size > adj) \
+      |                           ^~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8167:9: note: in expansion of macro ‘adj_init_size’
+ 8167 |         adj_init_size(__init_begin, __init_end, init_data_size,
+      |         ^~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8163:41: warning: comparison between two arrays [-Warray-compare]
+ 8163 |                 if (start <= pos && pos < end && size > adj) \
+      |                                         ^
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8167:9: note: in expansion of macro ‘adj_init_size’
+ 8167 |         adj_init_size(__init_begin, __init_end, init_data_size,
+      |         ^~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8163:41: note: use ‘&_sinittext[0] < &__init_end[0]’ to compare the addresses
+ 8163 |                 if (start <= pos && pos < end && size > adj) \
+      |                                         ^
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8167:9: note: in expansion of macro ‘adj_init_size’
+ 8167 |         adj_init_size(__init_begin, __init_end, init_data_size,
+      |         ^~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8163:27: warning: comparison between two arrays [-Warray-compare]
+ 8163 |                 if (start <= pos && pos < end && size > adj) \
+      |                           ^~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8169:9: note: in expansion of macro ‘adj_init_size’
+ 8169 |         adj_init_size(_stext, _etext, codesize, _sinittext, init_code_size);
+      |         ^~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8163:27: note: use ‘&_stext[0] <= &_sinittext[0]’ to compare the addresses
+ 8163 |                 if (start <= pos && pos < end && size > adj) \
+      |                           ^~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8169:9: note: in expansion of macro ‘adj_init_size’
+ 8169 |         adj_init_size(_stext, _etext, codesize, _sinittext, init_code_size);
+      |         ^~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8163:41: warning: comparison between two arrays [-Warray-compare]
+ 8163 |                 if (start <= pos && pos < end && size > adj) \
+      |                                         ^
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8169:9: note: in expansion of macro ‘adj_init_size’
+ 8169 |         adj_init_size(_stext, _etext, codesize, _sinittext, init_code_size);
+      |         ^~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8163:41: note: use ‘&_sinittext[0] < &_etext[0]’ to compare the addresses
+ 8163 |                 if (start <= pos && pos < end && size > adj) \
+      |                                         ^
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8169:9: note: in expansion of macro ‘adj_init_size’
+ 8169 |         adj_init_size(_stext, _etext, codesize, _sinittext, init_code_size);
+      |         ^~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8163:27: warning: comparison between two arrays [-Warray-compare]
+ 8163 |                 if (start <= pos && pos < end && size > adj) \
+      |                           ^~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8170:9: note: in expansion of macro ‘adj_init_size’
+ 8170 |         adj_init_size(_sdata, _edata, datasize, __init_begin, init_data_size);
+      |         ^~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8163:27: note: use ‘&_sdata[0] <= &__init_begin[0]’ to compare the addresses
+ 8163 |                 if (start <= pos && pos < end && size > adj) \
+      |                           ^~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8170:9: note: in expansion of macro ‘adj_init_size’
+ 8170 |         adj_init_size(_sdata, _edata, datasize, __init_begin, init_data_size);
+      |         ^~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8163:41: warning: comparison between two arrays [-Warray-compare]
+ 8163 |                 if (start <= pos && pos < end && size > adj) \
+      |                                         ^
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8170:9: note: in expansion of macro ‘adj_init_size’
+ 8170 |         adj_init_size(_sdata, _edata, datasize, __init_begin, init_data_size);
+      |         ^~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8163:41: note: use ‘&__init_begin[0] < &_edata[0]’ to compare the addresses
+ 8163 |                 if (start <= pos && pos < end && size > adj) \
+      |                                         ^
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8170:9: note: in expansion of macro ‘adj_init_size’
+ 8170 |         adj_init_size(_sdata, _edata, datasize, __init_begin, init_data_size);
+      |         ^~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8163:27: warning: comparison between two arrays [-Warray-compare]
+ 8163 |                 if (start <= pos && pos < end && size > adj) \
+      |                           ^~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8171:9: note: in expansion of macro ‘adj_init_size’
+ 8171 |         adj_init_size(_stext, _etext, codesize, __start_rodata, rosize);
+      |         ^~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8163:27: note: use ‘&_stext[0] <= &__start_rodata[0]’ to compare the addresses
+ 8163 |                 if (start <= pos && pos < end && size > adj) \
+      |                           ^~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8171:9: note: in expansion of macro ‘adj_init_size’
+ 8171 |         adj_init_size(_stext, _etext, codesize, __start_rodata, rosize);
+      |         ^~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8163:41: warning: comparison between two arrays [-Warray-compare]
+ 8163 |                 if (start <= pos && pos < end && size > adj) \
+      |                                         ^
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8171:9: note: in expansion of macro ‘adj_init_size’
+ 8171 |         adj_init_size(_stext, _etext, codesize, __start_rodata, rosize);
+      |         ^~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8163:41: note: use ‘&__start_rodata[0] < &_etext[0]’ to compare the addresses
+ 8163 |                 if (start <= pos && pos < end && size > adj) \
+      |                                         ^
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8171:9: note: in expansion of macro ‘adj_init_size’
+ 8171 |         adj_init_size(_stext, _etext, codesize, __start_rodata, rosize);
+      |         ^~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8163:27: warning: comparison between two arrays [-Warray-compare]
+ 8163 |                 if (start <= pos && pos < end && size > adj) \
+      |                           ^~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8172:9: note: in expansion of macro ‘adj_init_size’
+ 8172 |         adj_init_size(_sdata, _edata, datasize, __start_rodata, rosize);
+      |         ^~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8163:27: note: use ‘&_sdata[0] <= &__start_rodata[0]’ to compare the addresses
+ 8163 |                 if (start <= pos && pos < end && size > adj) \
+      |                           ^~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8172:9: note: in expansion of macro ‘adj_init_size’
+ 8172 |         adj_init_size(_sdata, _edata, datasize, __start_rodata, rosize);
+      |         ^~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8163:41: warning: comparison between two arrays [-Warray-compare]
+ 8163 |                 if (start <= pos && pos < end && size > adj) \
+      |                                         ^
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8172:9: note: in expansion of macro ‘adj_init_size’
+ 8172 |         adj_init_size(_sdata, _edata, datasize, __start_rodata, rosize);
+      |         ^~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8163:41: note: use ‘&__start_rodata[0] < &_edata[0]’ to compare the addresses
+ 8163 |                 if (start <= pos && pos < end && size > adj) \
+      |                                         ^
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/mm/page_alloc.c:8172:9: note: in expansion of macro ‘adj_init_size’
+ 8172 |         adj_init_size(_sdata, _edata, datasize, __start_rodata, rosize);
+      |         ^~~~~~~~~~~~~
+In file included from /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/kernel.h:11,
+                 from /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/list.h:9,
+                 from /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/module.h:12,
+                 from /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/ethernet/eth.c:36:
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/ethernet/eth.c: In function ‘eth_type_trans’:
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/ethernet/eth.c:166:23: warning: ‘ether_addr_equal_64bits’ reading 8 bytes from a region of size 6 [-Wstringop-overread]
+  166 |         if (unlikely(!ether_addr_equal_64bits(eth->h_dest,
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  167 |                                               dev->dev_addr))) {
+      |                                               ~~~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/compiler.h:78:45: note: in definition of macro ‘unlikely’
+   78 | # define unlikely(x)    __builtin_expect(!!(x), 0)
+      |                                             ^
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/ethernet/eth.c:166:23: note: referencing argument 1 of type ‘const u8[8]’ {aka ‘const unsigned char[8]’}
+  166 |         if (unlikely(!ether_addr_equal_64bits(eth->h_dest,
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  167 |                                               dev->dev_addr))) {
+      |                                               ~~~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/compiler.h:78:45: note: in definition of macro ‘unlikely’
+   78 | # define unlikely(x)    __builtin_expect(!!(x), 0)
+      |                                             ^
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/ethernet/eth.c:166:23: note: referencing argument 2 of type ‘const u8[8]’ {aka ‘const unsigned char[8]’}
+  166 |         if (unlikely(!ether_addr_equal_64bits(eth->h_dest,
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  167 |                                               dev->dev_addr))) {
+      |                                               ~~~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/compiler.h:78:45: note: in definition of macro ‘unlikely’
+   78 | # define unlikely(x)    __builtin_expect(!!(x), 0)
+      |                                             ^
+In file included from /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/ethernet/eth.c:47:
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/etherdevice.h:367:20: note: in a call to function ‘ether_addr_equal_64bits’
+  367 | static inline bool ether_addr_equal_64bits(const u8 addr1[6+2],
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/ethernet/eth.c:168:30: warning: ‘is_multicast_ether_addr_64bits’ reading 8 bytes from a region of size 6 [-Wstringop-overread]
+  168 |                 if (unlikely(is_multicast_ether_addr_64bits(eth->h_dest))) {
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/compiler.h:78:45: note: in definition of macro ‘unlikely’
+   78 | # define unlikely(x)    __builtin_expect(!!(x), 0)
+      |                                             ^
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/ethernet/eth.c:168:30: note: referencing argument 1 of type ‘const u8[8]’ {aka ‘const unsigned char[8]’}
+  168 |                 if (unlikely(is_multicast_ether_addr_64bits(eth->h_dest))) {
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/compiler.h:78:45: note: in definition of macro ‘unlikely’
+   78 | # define unlikely(x)    __builtin_expect(!!(x), 0)
+      |                                             ^
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/etherdevice.h:130:20: note: in a call to function ‘is_multicast_ether_addr_64bits’
+  130 | static inline bool is_multicast_ether_addr_64bits(const u8 addr[6+2])
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/ethernet/eth.c:169:29: warning: ‘ether_addr_equal_64bits’ reading 8 bytes from a region of size 6 [-Wstringop-overread]
+  169 |                         if (ether_addr_equal_64bits(eth->h_dest, dev->broadcast))
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/ethernet/eth.c:169:29: note: referencing argument 1 of type ‘const u8[8]’ {aka ‘const unsigned char[8]’}
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/ethernet/eth.c:169:29: note: referencing argument 2 of type ‘const u8[8]’ {aka ‘const unsigned char[8]’}
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/etherdevice.h:367:20: note: in a call to function ‘ether_addr_equal_64bits’
+  367 | static inline bool ether_addr_equal_64bits(const u8 addr1[6+2],
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/core/dev.c: In function ‘bpf_prog_run_generic_xdp’:
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/core/dev.c:4713:21: warning: ‘ether_addr_equal_64bits’ reading 8 bytes from a region of size 6 [-Wstringop-overread]
+ 4713 |         orig_host = ether_addr_equal_64bits(eth->h_dest, skb->dev->dev_addr);
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/core/dev.c:4713:21: note: referencing argument 1 of type ‘const u8[8]’ {aka ‘const unsigned char[8]’}
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/core/dev.c:4713:21: note: referencing argument 2 of type ‘const u8[8]’ {aka ‘const unsigned char[8]’}
+In file included from /home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/core/dev.c:91:
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/etherdevice.h:367:20: note: in a call to function ‘ether_addr_equal_64bits’
+  367 | static inline bool ether_addr_equal_64bits(const u8 addr1[6+2],
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/core/dev.c:4714:22: warning: ‘is_multicast_ether_addr_64bits’ reading 8 bytes from a region of size 6 [-Wstringop-overread]
+ 4714 |         orig_bcast = is_multicast_ether_addr_64bits(eth->h_dest);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/core/dev.c:4714:22: note: referencing argument 1 of type ‘const u8[8]’ {aka ‘const unsigned char[8]’}
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/etherdevice.h:130:20: note: in a call to function ‘is_multicast_ether_addr_64bits’
+  130 | static inline bool is_multicast_ether_addr_64bits(const u8 addr[6+2])
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/core/dev.c:4741:27: warning: ‘ether_addr_equal_64bits’ reading 8 bytes from a region of size 6 [-Wstringop-overread]
+ 4741 |             (orig_host != ether_addr_equal_64bits(eth->h_dest,
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 4742 |                                                   skb->dev->dev_addr)) ||
+      |                                                   ~~~~~~~~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/core/dev.c:4741:27: note: referencing argument 1 of type ‘const u8[8]’ {aka ‘const unsigned char[8]’}
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/core/dev.c:4741:27: note: referencing argument 2 of type ‘const u8[8]’ {aka ‘const unsigned char[8]’}
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/etherdevice.h:367:20: note: in a call to function ‘ether_addr_equal_64bits’
+  367 | static inline bool ether_addr_equal_64bits(const u8 addr1[6+2],
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/core/dev.c:4743:28: warning: ‘is_multicast_ether_addr_64bits’ reading 8 bytes from a region of size 6 [-Wstringop-overread]
+ 4743 |             (orig_bcast != is_multicast_ether_addr_64bits(eth->h_dest))) {
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/net/core/dev.c:4743:28: note: referencing argument 1 of type ‘const u8[8]’ {aka ‘const unsigned char[8]’}
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/include/linux/etherdevice.h:130:20: note: in a call to function ‘is_multicast_ether_addr_64bits’
+  130 | static inline bool is_multicast_ether_addr_64bits(const u8 addr[6+2])
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/workqueue.c: In function ‘get_work_pwq’:
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/workqueue.c:704:24: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  704 |                 return (void *)(data & WORK_STRUCT_WQ_DATA_MASK);
+      |                        ^
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/workqueue.c: In function ‘get_work_pool’:
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/workqueue.c:732:25: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  732 |                 return ((struct pool_workqueue *)
+      |                         ^
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/workqueue.c: In function ‘get_work_pool_id’:
+/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15/kernel/workqueue.c:754:25: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  754 |                 return ((struct pool_workqueue *)
+      |                         ^
+arm-none-linux-gnueabihf-ld: warning: arch/arm/lib/ucmpdi2.o: missing .note.GNU-stack section implies executable stack
+arm-none-linux-gnueabihf-ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+arm-none-linux-gnueabihf-ld: warning: arch/arm/lib/ucmpdi2.o: missing .note.GNU-stack section implies executable stack
+arm-none-linux-gnueabihf-ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+arm-none-linux-gnueabihf-ld: warning: .tmp_vmlinux.kallsyms1.o: missing .note.GNU-stack section implies executable stack
+arm-none-linux-gnueabihf-ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+arm-none-linux-gnueabihf-ld: warning: .tmp_vmlinux.kallsyms2.o: missing .note.GNU-stack section implies executable stack
+arm-none-linux-gnueabihf-ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+make: Leaving directory '/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15'

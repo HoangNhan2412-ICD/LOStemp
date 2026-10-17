@@ -1,0 +1,976 @@
+Booting Linux on physical CPU 0x0
+Linux version 5.15.0 (dyk@mydklaptop) (arm-linux-gnueabihf-gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, GNU ld (GNU Binutils for Ubuntu) 2.46) #1 SMP Sun Sep 27 19:02:48 +07 2026
+CPU: ARMv7 Processor [410fc090] revision 0 (ARMv7), cr=10c5387d
+CPU: PIPT / VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+OF: fdt: Machine model: V2P-CA9
+Memory policy: Data cache writealloc
+Reserved memory: created DMA memory pool at 0x4c000000, size 8 MiB
+OF: reserved mem: initialized node vram@4c000000, compatible id shared-dma-pool
+cma: Reserved 16 MiB at 0x7f000000
+Zone ranges:
+  Normal   [mem 0x0000000060000000-0x000000007fffffff]
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x0000000060000000-0x000000007fffffff]
+Initmem setup node 0 [mem 0x0000000060000000-0x000000007fffffff]
+percpu: Embedded 15 pages/cpu s30156 r8192 d23092 u61440
+Built 1 zonelists, mobility grouping on.  Total pages: 130048
+Kernel command line: console=ttyAMA0,115200 rdinit=/asm1/init mem=512M log_buf_len=256K
+printk: log_buf_len: 262144 bytes
+printk: early log buf free: 15164(92%)
+Dentry cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
+Inode-cache hash table entries: 32768 (order: 5, 131072 bytes, linear)
+mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+Memory: 486440K/524288K available (8192K kernel code, 593K rwdata, 1784K rodata, 1024K init, 151K bss, 21464K reserved, 16384K cma-reserved)
+SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+trace event string verifier disabled
+rcu: Hierarchical RCU implementation.
+rcu: 	RCU event tracing is enabled.
+rcu: 	RCU restricting CPUs from NR_CPUS=8 to nr_cpu_ids=4.
+rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+L2C: platform modifies aux control register: 0x02020000 -> 0x02420000
+L2C: DT/platform modifies aux control register: 0x02020000 -> 0x02420000
+L2C-310 enabling early BRESP for Cortex-A9
+L2C-310 full line of zeros enabled for Cortex-A9
+L2C-310 dynamic clock gating disabled, standby mode disabled
+L2C-310 cache controller enabled, 8 ways, 128 kB
+L2C-310: CACHE_ID 0x410000c8, AUX_CTRL 0x46420001
+random: get_random_bytes called from start_kernel+0x4f8/0x6ac with crng_init=0
+sched_clock: 32 bits at 24MHz, resolution 41ns, wraps every 89478484971ns
+clocksource: arm,sp804: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275 ns
+Failed to initialize '/bus@40000000/motherboard-bus@40000000/iofpga@7,00000000/timer@12000': -22
+smp_twd: clock not found -2
+Console: colour dummy device 80x30
+Calibrating local timer... 94.65MHz.
+Calibrating delay loop... 1554.84 BogoMIPS (lpj=7774208)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+CPU: Testing write buffer coherency: ok
+CPU0: Spectre v2: using BPIALL workaround
+CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+Setting up static identity map for 0x60100000 - 0x60100060
+rcu: Hierarchical SRCU implementation.
+smp: Bringing up secondary CPUs ...
+CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+CPU1: Spectre v2: using BPIALL workaround
+CPU2: failed to boot: -38
+CPU3: failed to boot: -38
+smp: Brought up 1 node, 2 CPUs
+SMP: Total of 2 processors activated (3339.05 BogoMIPS).
+CPU: All CPU(s) started in SVC mode.
+devtmpfs: initialized
+VFP support v0.3: implementor 41 architecture 3 part 30 variant 9 rev 0
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+NET: Registered PF_NETLINK/PF_ROUTE protocol family
+DMA: preallocated 256 KiB pool for atomic coherent allocations
+cpuidle: using governor ladder
+hw-breakpoint: debug architecture 0x4 unsupported.
+Serial: AMBA PL011 UART driver
+irq: type mismatch, failed to map hwirq-75 for interrupt-controller@1e001000!
+SCSI subsystem initialized
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+pps_core: LinuxPPS API ver. 1 registered
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+PTP clock support registered
+Advanced Linux Sound Architecture Driver Initialized.
+clocksource: Switched to clocksource arm,sp804
+NET: Registered PF_INET protocol family
+IP idents hash table entries: 8192 (order: 4, 65536 bytes, linear)
+tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 6144 bytes, linear)
+TCP established hash table entries: 4096 (order: 2, 16384 bytes, linear)
+TCP bind hash table entries: 4096 (order: 3, 32768 bytes, linear)
+TCP: Hash tables configured (established 4096 bind 4096)
+UDP hash table entries: 256 (order: 1, 8192 bytes, linear)
+UDP-Lite hash table entries: 256 (order: 1, 8192 bytes, linear)
+NET: Registered PF_UNIX/PF_LOCAL protocol family
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+Unpacking initramfs...
+hw perfevents: enabled with armv7_cortex_a9 PMU driver, 7 counters available
+workingset: timestamp_bits=30 max_order=17 bucket_order=0
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+9p: Installing v9fs 9p2000 file system support
+io scheduler mq-deadline registered
+io scheduler kyber registered
+sii902x 0-0060: supply iovcc not found, using dummy regulator
+sii902x 0-0060: supply cvcc12 not found, using dummy regulator
+Freeing initrd memory: 3516K
+physmap-flash 40000000.flash: physmap platform flash device: [mem 0x40000000-0x43ffffff]
+40000000.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+Intel/Sharp Extended Query Table at 0x0031
+Using buffer write method
+physmap-flash 40000000.flash: physmap platform flash device: [mem 0x44000000-0x47ffffff]
+40000000.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+Intel/Sharp Extended Query Table at 0x0031
+Using buffer write method
+Concatenating MTD devices:
+(0): "40000000.flash"
+(1): "40000000.flash"
+into device "40000000.flash"
+physmap-flash 48000000.psram: physmap platform flash device: [mem 0x48000000-0x49ffffff]
+libphy: Fixed MDIO Bus: probed
+smsc911x 4e000000.ethernet (unnamed net_device) (uninitialized): Device not READY in 100ms aborting
+isp1760 4f000000.usb: isp1760 bus width: 32, oc: digital
+isp1760 4f000000.usb: NXP ISP1760 USB Host Controller
+isp1760 4f000000.usb: new USB bus registered, assigned bus number 1
+isp1760 4f000000.usb: Scratch test failed. 0x00000000
+isp1760 4f000000.usb: can't setup: -19
+isp1760 4f000000.usb: USB bus 1 deregistered
+usbcore: registered new interface driver usb-storage
+ledtrig-cpu: registered to indicate activity on CPUs
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+NET: Registered PF_PACKET protocol family
+9pnet: Installing 9P2000 support
+Registering SWP/SWPB emulation handler
+aaci-pl041 10004000.aaci: ARM AC'97 Interface PL041 rev0 at 0x10004000, irq 32
+aaci-pl041 10004000.aaci: FIFO 512 entries
+mmci-pl18x 10005000.mmci: Got CD GPIO
+mmci-pl18x 10005000.mmci: Got WP GPIO
+mmci-pl18x 10005000.mmci: mmc0: PL181 manf 41 rev0 at 0x10005000 irq 33,34 (pio)
+10009000.uart: ttyAMA0 at MMIO 0x10009000 (irq = 37, base_baud = 0) is a PL011 rev1
+printk: console [ttyAMA0] enabled
+1000a000.uart: ttyAMA1 at MMIO 0x1000a000 (irq = 38, base_baud = 0) is a PL011 rev1
+1000b000.uart: ttyAMA2 at MMIO 0x1000b000 (irq = 39, base_baud = 0) is a PL011 rev1
+1000c000.uart: ttyAMA3 at MMIO 0x1000c000 (irq = 40, base_baud = 0) is a PL011 rev1
+rtc-pl031 10017000.rtc: registered as rtc0
+rtc-pl031 10017000.rtc: setting system clock to 2026-10-17T06:29:28 UTC (1792218568)
+amba 10020000.clcd: Fixing up cyclic dependency with 0-0039
+drm-clcd-pl111 10020000.clcd: DVI muxed to daughterboard 1 (core tile) CLCD
+drm-clcd-pl111 10020000.clcd: initializing Versatile Express PL111
+sii902x 0-0039: supply iovcc not found, using dummy regulator
+sii902x 0-0039: supply cvcc12 not found, using dummy regulator
+i2c i2c-0: Added multiplexed i2c bus 2
+drm-clcd-pl111 1001f000.clcd: assigned reserved memory node vram@4c000000
+drm-clcd-pl111 1001f000.clcd: using device-specific reserved memory
+drm-clcd-pl111 1001f000.clcd: core tile graphics present
+drm-clcd-pl111 1001f000.clcd: this device will be deactivated
+drm-clcd-pl111 1001f000.clcd: Versatile Express init failed - -19
+drm-clcd-pl111 10020000.clcd: DVI muxed to daughterboard 1 (core tile) CLCD
+drm-clcd-pl111 10020000.clcd: initializing Versatile Express PL111
+drm-clcd-pl111 10020000.clcd: found bridge on endpoint 0
+drm-clcd-pl111 10020000.clcd: Using non-panel bridge
+[drm] Initialized pl111 1.0.0 20170317 for 10020000.clcd on minor 0
+input: AT Raw Set 2 keyboard as /devices/platform/bus@40000000/bus@40000000:motherboard-bus@40000000/bus@40000000:motherboard-bus@40000000:iofpga@7,00000000/10006000.kmi/serio0/input/input0
+Console: switching to colour frame buffer device 128x48
+drm-clcd-pl111 10020000.clcd: [drm] fb0: pl111 frame buffer device
+ALSA device list:
+  #0: ARM AC'97 Interface PL041 rev0 at 0x10004000, irq 32
+Freeing unused kernel image (initmem) memory: 1024K
+Run /asm1/init as init process
+ASM1_ENV_BEGIN
+Linux (none) 5.15.0 #1 SMP Sun Sep 27 19:02:48 +07 2026 armv7l GNU/Linux
+Linux version 5.15.0 (dyk@mydklaptop) (arm-linux-gnueabihf-gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, GNU ld (GNU Binutils for Ubuntu) 2.46) #1 SMP Sun Sep 27 19:02:48 +07 2026
+dd8b9217e7b4ebb1f568f3ba00ceb02967adb8a074ed4efa1b23d0f7f92eda52  -
+ASM1_ENV_END
+ASM1_TASK1_BEGIN
++ insmod ./asgn1_driver.ko
+asgn1_driver: loading out-of-tree module taints kernel.
+asgn1_driver: loaded major=241 mode=1
++ grep '^asgn1_driver ' /proc/modules
+asgn1_driver 16384 0 - Live 0x7f000000 (O)
++ '[' '!' -c /dev/asgn1 ]
++ mknod /dev/asgn1 c 241 0
++ ls -l /dev/asgn1
+crw-r--r--    1 root     0         241,   0 Oct 17 06:29 [1;35m/dev/asgn1[m
++ ./asgn1_test
+PASS fd >= 0
+ABI stats_size=20 GET_STATS=0x80144101 nr=1 size=20
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+PASS ioctl(fd, ASGN1_GET_STATS, &s) == 0
+STATS open_count=1 write_count=0 read_count=0 buffer_len=0 last_write_size=0
+PASS s.open_count == 1 && s.write_count == 0 && s.read_count == 0 && s.buffer_len == 0
+PASS write(fd,"hello",5) == 5
+PASS fd >= 0
+PASS n == (ssize_t)strlen(expected)
+PASS !strcmp(text, expected)
+PASS read(fd, text, sizeof(text)) == 0
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+PASS ioctl(fd, ASGN1_GET_STATS, &s) == 0
+STATS open_count=2 write_count=1 read_count=1 buffer_len=5 last_write_size=5
+PASS s.write_count == 1 && s.read_count == 1 && s.buffer_len == 5 && s.last_write_size == 5
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+PASS ioctl(fd,ASGN1_SET_MODE,&mode) == 0
+PASS write(fd,"abc",3) == 3
+PASS fd >= 0
+PASS n == (ssize_t)strlen(expected)
+PASS !strcmp(text, expected)
+PASS read(fd, text, sizeof(text)) == 0
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+PASS ioctl(fd, ASGN1_GET_STATS, &s) == 0
+STATS open_count=3 write_count=2 read_count=2 buffer_len=11 last_write_size=3
+PASS s.buffer_len == 11 && s.last_write_size == 3
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+PASS ioctl(fd,ASGN1_SET_MODE,&mode) == 0
+PASS write(fd,"echo",4) == 4
+PASS fd >= 0
+PASS n == (ssize_t)strlen(expected)
+PASS !strcmp(text, expected)
+PASS read(fd, text, sizeof(text)) == 0
+asgn1_driver: ioctl cmd=0x80404103 nr=3
+PASS ioctl(fd,ASGN1_GET_VERSION,version.text) == 0
+PASS memchr(version.text,0,64) != NULL
+PASS version.guard[i] == 0xa5
+PASS version.guard[i] == 0xa5
+PASS version.guard[i] == 0xa5
+PASS version.guard[i] == 0xa5
+PASS version.guard[i] == 0xa5
+PASS version.guard[i] == 0xa5
+PASS version.guard[i] == 0xa5
+PASS version.guard[i] == 0xa5
+VERSION asgn1_driver v1.0 - SE200778
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+PASS ioctl(fd,ASGN1_SET_MODE,&mode) == -1 && errno == EINVAL
+asgn1_driver: ioctl cmd=0x4163 nr=99
+PASS ioctl(fd,_IO(ASGN1_MAGIC,99),0) == -1 && errno == ENOTTY
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+PASS ioctl(fd,ASGN1_GET_STATS,(void *)1) == -1 && errno == EFAULT
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+PASS ioctl(fd,ASGN1_SET_MODE,(void *)1) == -1 && errno == EFAULT
+asgn1_driver: ioctl cmd=0x80404103 nr=3
+PASS ioctl(fd,ASGN1_GET_VERSION,(void *)1) == -1 && errno == EFAULT
+asgn1_driver: ioctl cmd=0x80014101 nr=1
+PASS ioctl(fd,_IOR(ASGN1_MAGIC,1,char),&s) == -1 && errno == ENOTTY
+PASS write(fd,large,sizeof(large)) == -1 && errno == EMSGSIZE
+PASS fd >= 0
+PASS n == (ssize_t)strlen(expected)
+PASS !strcmp(text, expected)
+PASS read(fd, text, sizeof(text)) == 0
+PASS syscall(SYS_write,fd,(void *)1,4) == -1 && errno == EFAULT
+PASS fd >= 0
+PASS n == (ssize_t)strlen(expected)
+PASS !strcmp(text, expected)
+PASS read(fd, text, sizeof(text)) == 0
+PASS write(fd,large,sizeof(large)-1) == sizeof(large)-1
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+PASS ioctl(fd, ASGN1_GET_STATS, &s) == 0
+STATS open_count=6 write_count=4 read_count=5 buffer_len=1023 last_write_size=1023
+PASS s.buffer_len == 1023
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+PASS ioctl(fd,ASGN1_SET_MODE,&mode) == 0
+PASS write(fd,large,1016) == -1 && errno == EMSGSIZE
+PASS write(fd,large,1015) == 1015
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+PASS ioctl(fd, ASGN1_GET_STATS, &s) == 0
+STATS open_count=6 write_count=5 read_count=5 buffer_len=1023 last_write_size=1015
+PASS s.buffer_len == 1023 && s.last_write_size == 1015
+asgn1_driver: ioctl cmd=0x4100 nr=0
+PASS ioctl(fd,ASGN1_RESET_BUFFER,0) == 0
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+PASS ioctl(fd, ASGN1_GET_STATS, &s) == 0
+STATS open_count=6 write_count=0 read_count=0 buffer_len=0 last_write_size=0
+PASS s.write_count == 0 && s.read_count == 0 && s.buffer_len == 0 && s.last_write_size == 0
+PASS s.open_count > 0
+PASS fd >= 0
+PASS n == (ssize_t)strlen(expected)
+PASS !strcmp(text, expected)
+PASS read(fd, text, sizeof(text)) == 0
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+PASS ioctl(fd,ASGN1_SET_MODE,&mode) == 0
+PASS write(fd,"abcdef",6) == 6
+PASS fd >= 0
+PASS read(rd,small,2) == 2
+PASS read(rd,small+2,4) == 4
+PASS !strcmp(small,"abcdef")
+PASS read(rd,small,1) == 0
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+PASS ioctl(fd, ASGN1_GET_STATS, &s) == 0
+STATS open_count=8 write_count=1 read_count=2 buffer_len=6 last_write_size=6
+PASS children[i] >= 0
+PASS children[i] >= 0
+PASS children[i] >= 0
+PASS children[i] >= 0
+PASS children[i] >= 0
+PASS children[i] >= 0
+PASS children[i] >= 0
+PASS waitpid(children[i],&status,0) == children[i]
+PASS WIFEXITED(status) && WEXITSTATUS(status) == 0
+PASS waitpid(children[i],&status,0) == children[i]
+PASS WIFEXITED(status) && WEXITSTATUS(status) == 0
+PASS children[i] >= 0
+PASS waitpid(children[i],&status,0) == children[i]
+PASS WIFEXITED(status) && WEXITSTATUS(status) == 0
+PASS waitpid(children[i],&status,0) == children[i]
+PASS WIFEXITED(status) && WEXITSTATUS(status) == 0
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+PASS ioctl(fd, ASGN1_GET_STATS, &s) == 0
+STATS open_count=12 write_count=401 read_count=2 buffer_len=4 last_write_size=4
+PASS s.write_count == before.write_count+400
+PASS s.open_count == before.open_count+4
+asgn1_driver: ioctl cmd=0x4100 nr=0
+PASS ioctl(fd,ASGN1_RESET_BUFFER,0) == 0
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+PASS ioctl(fd, ASGN1_GET_STATS, &s) == 0
+STATS open_count=12 write_count=0 read_count=0 buffer_len=0 last_write_size=0
+PASS s.buffer_len == 0 && s.write_count == 0 && s.read_count == 0
+TASK1_C_TESTS_PASS
++ cat /dev/asgn1
++ test -z 
++ exec
++ rmmod asgn1_driver
+rmmod: remove 'asgn1_driver': Resource temporarily unavailable
++ grep '^asgn1_driver ' /proc/modules
+asgn1_driver 16384 2 - Live 0x7f000000 (O)
++ exec
++ rmmod asgn1_driver
+asgn1_driver: cleanup complete
+input: ImExPS/2 Generic Explorer Mouse as /devices/platform/bus@40000000/bus@40000000:motherboard-bus@40000000/bus@40000000:motherboard-bus@40000000:iofpga@7,00000000/10007000.kmi/serio1/input/input2
++ test '!' -e /proc/asgn1_info
++ grep -q '^asgn1_driver ' /proc/modules
++ + grep asgn1_driver:
+dmesg
+asgn1_driver: loading out-of-tree module taints kernel.
+asgn1_driver: loaded major=241 mode=1
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+asgn1_driver: ioctl cmd=0x80404103 nr=3
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+asgn1_driver: ioctl cmd=0x4163 nr=99
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+asgn1_driver: ioctl cmd=0x80404103 nr=3
+asgn1_driver: ioctl cmd=0x80014101 nr=1
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x4100 nr=0
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x4100 nr=0
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: cleanup complete
++ dmesg
++ grep 'asgn1_driver: cleanup complete'
+asgn1_driver: cleanup complete
++ insmod ./asgn1_driver.ko
+asgn1_driver: loaded major=241 mode=1
++ cat /dev/asgn1
++ test -z 
++ printf default-echo
+asgn1_driver: ioctl cmd=0x802c542a nr=42
++ cat /dev/asgn1
++ test default-echo '=' default-echo
++ rmmod asgn1_driver
+asgn1_driver: cleanup complete
++ echo TASK1_SCRIPT_PASS
+TASK1_SCRIPT_PASS
+ASM1_TASK1_RC=0
+ASM1_TASK1_END
+ASM1_TASK2_BEGIN
++ insmod ./counter_driver.ko
+counter_driver: loaded major=10 minor=125
++ grep '^counter_driver ' /proc/modules
+counter_driver 16384 0 - Live 0x7f000000 (O)
++ test -c /dev/counter
++ ls -l /dev/counter
+crw-------    1 root     0          10, 125 Oct 17 06:29 [1;35m/dev/counter[m
++ echo 'SNAPSHOT BEFORE WRITE'
+SNAPSHOT BEFORE WRITE
++ cat /proc/counter_info
+counter: 0
+read_count: 0
+write_count: 0
++ cat /dev/counter
+counter_driver: read snapshot=0
++ test 0 '=' 0
++ cat /dev/counter
+counter_driver: read snapshot=1
++ test 1 '=' 1
++ echo 100
+counter_driver: set=100
++ echo 'SNAPSHOT AFTER WRITE'
+SNAPSHOT AFTER WRITE
++ cat /proc/counter_info
+counter: 100
+read_count: 2
+write_count: 1
++ cat /dev/counter
+counter_driver: read snapshot=100
++ test 100 '=' 100
++ echo 0
+counter_driver: set=0
++ echo 'SNAPSHOT AFTER RESET'
+SNAPSHOT AFTER RESET
++ cat /proc/counter_info
+counter: 0
+read_count: 3
+write_count: 2
++ cat /dev/counter
+counter_driver: read snapshot=0
++ test 0 '=' 0
++ ./counter_test
+PASS fd >= 0
+counter_driver: set=100
+PASS write(fd,"100\n",4) == 4
+PASS read(fd,buf,0) == 0
+PASS syscall(SYS_read,fd,(void *)1,4) == -1 && errno == EFAULT
+counter_driver: read snapshot=100
+PASS read(fd,buf,1) == 1
+PASS read(fd,buf+1,31) == 3
+PASS !strcmp(buf,"100\n")
+PASS read(fd,&byte,1) == 0
+PASS f != NULL
+PASS fscanf(f,"counter: %d\nread_count: %d\nwrite_count: %d",value,reads,writes) == 3
+COUNTER value=101 reads=5 writes=3
+PASS v == 101
+PASS write(fd,"-1",2) == -1 && errno == EINVAL
+PASS write(fd,"abc",3) == -1 && errno == EINVAL
+PASS write(fd,"1x",2) == -1 && errno == EINVAL
+PASS write(fd,"1\0x",3) == -1 && errno == EINVAL
+PASS write(fd,"2147483648",10) == -1 && errno == EINVAL
+PASS syscall(SYS_write,fd,(void *)1,4) == -1 && errno == EFAULT
+counter_driver: set=2147483647
+PASS write(fd,"2147483647",10) == 10
+PASS rd >= 0
+PASS read(rd,buf,sizeof(buf)) == -1 && errno == EOVERFLOW
+counter_driver: set=0
+PASS write(fd,"0",1) == 1
+PASS f != NULL
+PASS fscanf(f,"counter: %d\nread_count: %d\nwrite_count: %d",value,reads,writes) == 3
+COUNTER value=0 reads=5 writes=5
+PASS v == 0
+PASS children[i]>=0
+PASS children[i]>=0
+PASS children[i]>=0
+counter_driver: read snapshot=0
+counter_driver: read snapshot=1
+PASS children[i]>=0
+PASS children[i]>=0
+PASS children[i]>=0
+counter_driver: read snapshot=2
+counter_driver: read snapshot=3
+counter_driver: read snapshot=4
+counter_driver: read snapshot=5
+PASS children[i]>=0
+counter_driver: read snapshot=6
+counter_driver: read snapshot=7
+counter_driver: read snapshot=8
+counter_driver: read snapshot=9
+counter_driver: read snapshot=10
+counter_driver: read snapshot=11
+counter_driver: read snapshot=12
+counter_driver: read snapshot=13
+counter_driver: read snapshot=14
+counter_driver: read snapshot=15
+counter_driver: read snapshot=16
+counter_driver: read snapshot=17
+counter_driver: read snapshot=18
+counter_driver: read snapshot=19
+counter_driver: read snapshot=20
+counter_driver: read snapshot=21
+counter_driver: read snapshot=22
+counter_driver: read snapshot=23
+counter_driver: read snapshot=24
+counter_driver: read snapshot=25
+counter_driver: read snapshot=26
+counter_driver: read snapshot=27
+counter_driver: read snapshot=28
+counter_driver: read snapshot=29
+counter_driver: read snapshot=30
+counter_driver: read snapshot=31
+counter_driver: read snapshot=32
+counter_driver: read snapshot=33
+counter_driver: read snapshot=34
+counter_driver: read snapshot=35
+counter_driver: read snapshot=36
+counter_driver: read snapshot=37
+counter_driver: read snapshot=38
+counter_driver: read snapshot=39
+counter_driver: read snapshot=40
+counter_driver: read snapshot=41
+counter_driver: read snapshot=42
+counter_driver: read snapshot=43
+counter_driver: read snapshot=44
+counter_driver: read snapshot=45
+counter_driver: read snapshot=46
+counter_driver: read snapshot=47
+counter_driver: read snapshot=48
+counter_driver: read snapshot=49
+counter_driver: read snapshot=50
+counter_driver: read snapshot=51
+counter_driver: read snapshot=52
+counter_driver: read snapshot=53
+counter_driver: read snapshot=54
+counter_driver: read snapshot=55
+counter_driver: read snapshot=56
+counter_driver: read snapshot=57
+counter_driver: read snapshot=58
+counter_driver: read snapshot=59
+PASS waitpid(children[i],&status,0)==children[i]
+PASS WIFEXITED(status) && WEXITSTATUS(status)==0
+PASS waitpid(children[i],&status,0)==children[i]
+PASS WIFEXITED(status) && WEXITSTATUS(status)==0
+PASS children[i]>=0
+counter_driver: read snapshot=60
+counter_driver: read snapshot=61
+counter_driver: read snapshot=62
+counter_driver: read snapshot=63
+counter_driver: read snapshot=64
+counter_driver: read snapshot=65
+counter_driver: read snapshot=66
+counter_driver: read snapshot=67
+counter_driver: read snapshot=68
+counter_driver: read snapshot=69
+counter_driver: read snapshot=70
+counter_driver: read snapshot=71
+counter_driver: read snapshot=72
+counter_driver: read snapshot=73
+counter_driver: read snapshot=74
+counter_driver: read snapshot=75
+counter_driver: read snapshot=76
+counter_driver: read snapshot=77
+counter_driver: read snapshot=78
+counter_driver: read snapshot=79
+PASS waitpid(children[i],&status,0)==children[i]
+PASS WIFEXITED(status) && WEXITSTATUS(status)==0
+PASS waitpid(children[i],&status,0)==children[i]
+PASS WIFEXITED(status) && WEXITSTATUS(status)==0
+PASS f != NULL
+PASS fscanf(f,"counter: %d\nread_count: %d\nwrite_count: %d",value,reads,writes) == 3
+COUNTER value=80 reads=85 writes=5
+PASS endv==80 && endr==r+80 && endw==w
+TASK2_C_TESTS_PASS
++ exec
++ rmmod counter_driver
+rmmod: remove 'counter_driver': Resource temporarily unavailable
++ grep '^counter_driver ' /proc/modules
+counter_driver 16384 1 - Live 0x7f000000 (O)
++ exec
++ rmmod counter_driver
+counter_driver: cleanup complete
++ grep -q '^counter_driver ' /proc/modules
++ test '!' -e /proc/counter_info
++ test '!' -e /sys/class/misc/counter
++ test '!' -e /dev/counter
++ dmesg
++ grep counter_driver:
+counter_driver: loaded major=10 minor=125
+counter_driver: read snapshot=0
+counter_driver: read snapshot=1
+counter_driver: set=100
+counter_driver: read snapshot=100
+counter_driver: set=0
+counter_driver: read snapshot=0
+counter_driver: set=100
+counter_driver: read snapshot=100
+counter_driver: set=2147483647
+counter_driver: set=0
+counter_driver: read snapshot=0
+counter_driver: read snapshot=1
+counter_driver: read snapshot=2
+counter_driver: read snapshot=3
+counter_driver: read snapshot=4
+counter_driver: read snapshot=5
+counter_driver: read snapshot=6
+counter_driver: read snapshot=7
+counter_driver: read snapshot=8
+counter_driver: read snapshot=9
+counter_driver: read snapshot=10
+counter_driver: read snapshot=11
+counter_driver: read snapshot=12
+counter_driver: read snapshot=13
+counter_driver: read snapshot=14
+counter_driver: read snapshot=15
+counter_driver: read snapshot=16
+counter_driver: read snapshot=17
+counter_driver: read snapshot=18
+counter_driver: read snapshot=19
+counter_driver: read snapshot=20
+counter_driver: read snapshot=21
+counter_driver: read snapshot=22
+counter_driver: read snapshot=23
+counter_driver: read snapshot=24
+counter_driver: read snapshot=25
+counter_driver: read snapshot=26
+counter_driver: read snapshot=27
+counter_driver: read snapshot=28
+counter_driver: read snapshot=29
+counter_driver: read snapshot=30
+counter_driver: read snapshot=31
+counter_driver: read snapshot=32
+counter_driver: read snapshot=33
+counter_driver: read snapshot=34
+counter_driver: read snapshot=35
+counter_driver: read snapshot=36
+counter_driver: read snapshot=37
+counter_driver: read snapshot=38
+counter_driver: read snapshot=39
+counter_driver: read snapshot=40
+counter_driver: read snapshot=41
+counter_driver: read snapshot=42
+counter_driver: read snapshot=43
+counter_driver: read snapshot=44
+counter_driver: read snapshot=45
+counter_driver: read snapshot=46
+counter_driver: read snapshot=47
+counter_driver: read snapshot=48
+counter_driver: read snapshot=49
+counter_driver: read snapshot=50
+counter_driver: read snapshot=51
+counter_driver: read snapshot=52
+counter_driver: read snapshot=53
+counter_driver: read snapshot=54
+counter_driver: read snapshot=55
+counter_driver: read snapshot=56
+counter_driver: read snapshot=57
+counter_driver: read snapshot=58
+counter_driver: read snapshot=59
+counter_driver: read snapshot=60
+counter_driver: read snapshot=61
+counter_driver: read snapshot=62
+counter_driver: read snapshot=63
+counter_driver: read snapshot=64
+counter_driver: read snapshot=65
+counter_driver: read snapshot=66
+counter_driver: read snapshot=67
+counter_driver: read snapshot=68
+counter_driver: read snapshot=69
+counter_driver: read snapshot=70
+counter_driver: read snapshot=71
+counter_driver: read snapshot=72
+counter_driver: read snapshot=73
+counter_driver: read snapshot=74
+counter_driver: read snapshot=75
+counter_driver: read snapshot=76
+counter_driver: read snapshot=77
+counter_driver: read snapshot=78
+counter_driver: read snapshot=79
+counter_driver: cleanup complete
++ dmesg
++ grep 'counter_driver: cleanup complete'
+counter_driver: cleanup complete
++ insmod ./counter_driver.ko
+counter_driver: loaded major=10 minor=125
++ cat /dev/counter
+counter_driver: read snapshot=0
++ test 0 '=' 0
++ rmmod counter_driver
+counter_driver: cleanup complete
++ echo TASK2_SCRIPT_PASS
+TASK2_SCRIPT_PASS
+ASM1_TASK2_RC=0
+ASM1_TASK2_END
+ASM1_DMESG_BEGIN
+Booting Linux on physical CPU 0x0
+Linux version 5.15.0 (dyk@mydklaptop) (arm-linux-gnueabihf-gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, GNU ld (GNU Binutils for Ubuntu) 2.46) #1 SMP Sun Sep 27 19:02:48 +07 2026
+CPU: ARMv7 Processor [410fc090] revision 0 (ARMv7), cr=10c5387d
+CPU: PIPT / VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+OF: fdt: Machine model: V2P-CA9
+Memory policy: Data cache writealloc
+Reserved memory: created DMA memory pool at 0x4c000000, size 8 MiB
+OF: reserved mem: initialized node vram@4c000000, compatible id shared-dma-pool
+cma: Reserved 16 MiB at 0x7f000000
+Zone ranges:
+  Normal   [mem 0x0000000060000000-0x000000007fffffff]
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x0000000060000000-0x000000007fffffff]
+Initmem setup node 0 [mem 0x0000000060000000-0x000000007fffffff]
+percpu: Embedded 15 pages/cpu s30156 r8192 d23092 u61440
+pcpu-alloc: s30156 r8192 d23092 u61440 alloc=15*4096
+pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 
+Built 1 zonelists, mobility grouping on.  Total pages: 130048
+Kernel command line: console=ttyAMA0,115200 rdinit=/asm1/init mem=512M log_buf_len=256K
+printk: log_buf_len: 262144 bytes
+printk: early log buf free: 15164(92%)
+Dentry cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
+Inode-cache hash table entries: 32768 (order: 5, 131072 bytes, linear)
+mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+Memory: 486440K/524288K available (8192K kernel code, 593K rwdata, 1784K rodata, 1024K init, 151K bss, 21464K reserved, 16384K cma-reserved)
+SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+trace event string verifier disabled
+rcu: Hierarchical RCU implementation.
+rcu: 	RCU event tracing is enabled.
+rcu: 	RCU restricting CPUs from NR_CPUS=8 to nr_cpu_ids=4.
+rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+L2C: platform modifies aux control register: 0x02020000 -> 0x02420000
+L2C: DT/platform modifies aux control register: 0x02020000 -> 0x02420000
+L2C-310 enabling early BRESP for Cortex-A9
+L2C-310 full line of zeros enabled for Cortex-A9
+L2C-310 dynamic clock gating disabled, standby mode disabled
+L2C-310 cache controller enabled, 8 ways, 128 kB
+L2C-310: CACHE_ID 0x410000c8, AUX_CTRL 0x46420001
+random: get_random_bytes called from start_kernel+0x4f8/0x6ac with crng_init=0
+sched_clock: 32 bits at 24MHz, resolution 41ns, wraps every 89478484971ns
+clocksource: arm,sp804: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275 ns
+Failed to initialize '/bus@40000000/motherboard-bus@40000000/iofpga@7,00000000/timer@12000': -22
+smp_twd: clock not found -2
+Console: colour dummy device 80x30
+Calibrating local timer... 94.65MHz.
+Calibrating delay loop... 1554.84 BogoMIPS (lpj=7774208)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+CPU: Testing write buffer coherency: ok
+CPU0: Spectre v2: using BPIALL workaround
+CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+Setting up static identity map for 0x60100000 - 0x60100060
+rcu: Hierarchical SRCU implementation.
+smp: Bringing up secondary CPUs ...
+CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+CPU1: Spectre v2: using BPIALL workaround
+CPU2: failed to boot: -38
+CPU3: failed to boot: -38
+smp: Brought up 1 node, 2 CPUs
+SMP: Total of 2 processors activated (3339.05 BogoMIPS).
+CPU: All CPU(s) started in SVC mode.
+devtmpfs: initialized
+VFP support v0.3: implementor 41 architecture 3 part 30 variant 9 rev 0
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+NET: Registered PF_NETLINK/PF_ROUTE protocol family
+DMA: preallocated 256 KiB pool for atomic coherent allocations
+cpuidle: using governor ladder
+hw-breakpoint: debug architecture 0x4 unsupported.
+Serial: AMBA PL011 UART driver
+irq: type mismatch, failed to map hwirq-75 for interrupt-controller@1e001000!
+SCSI subsystem initialized
+libata version 3.00 loaded.
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+pps_core: LinuxPPS API ver. 1 registered
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+PTP clock support registered
+Advanced Linux Sound Architecture Driver Initialized.
+clocksource: Switched to clocksource arm,sp804
+NET: Registered PF_INET protocol family
+IP idents hash table entries: 8192 (order: 4, 65536 bytes, linear)
+tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 6144 bytes, linear)
+TCP established hash table entries: 4096 (order: 2, 16384 bytes, linear)
+TCP bind hash table entries: 4096 (order: 3, 32768 bytes, linear)
+TCP: Hash tables configured (established 4096 bind 4096)
+UDP hash table entries: 256 (order: 1, 8192 bytes, linear)
+UDP-Lite hash table entries: 256 (order: 1, 8192 bytes, linear)
+NET: Registered PF_UNIX/PF_LOCAL protocol family
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+Unpacking initramfs...
+hw perfevents: enabled with armv7_cortex_a9 PMU driver, 7 counters available
+workingset: timestamp_bits=30 max_order=17 bucket_order=0
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+9p: Installing v9fs 9p2000 file system support
+io scheduler mq-deadline registered
+io scheduler kyber registered
+sii902x 0-0060: supply iovcc not found, using dummy regulator
+sii902x 0-0060: supply cvcc12 not found, using dummy regulator
+Freeing initrd memory: 3516K
+physmap-flash 40000000.flash: physmap platform flash device: [mem 0x40000000-0x43ffffff]
+40000000.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+Intel/Sharp Extended Query Table at 0x0031
+Using buffer write method
+erase region 0: offset=0x0,size=0x40000,blocks=256
+physmap-flash 40000000.flash: physmap platform flash device: [mem 0x44000000-0x47ffffff]
+40000000.flash: Found 2 x16 devices at 0x0 in 32-bit bank. Manufacturer ID 0x000000 Chip ID 0x000000
+Intel/Sharp Extended Query Table at 0x0031
+Using buffer write method
+erase region 0: offset=0x0,size=0x40000,blocks=256
+Concatenating MTD devices:
+(0): "40000000.flash"
+(1): "40000000.flash"
+into device "40000000.flash"
+physmap-flash 48000000.psram: physmap platform flash device: [mem 0x48000000-0x49ffffff]
+libphy: Fixed MDIO Bus: probed
+smsc911x 4e000000.ethernet (unnamed net_device) (uninitialized): Device not READY in 100ms aborting
+isp1760 4f000000.usb: isp1760 bus width: 32, oc: digital
+isp1760 4f000000.usb: NXP ISP1760 USB Host Controller
+isp1760 4f000000.usb: new USB bus registered, assigned bus number 1
+isp1760 4f000000.usb: Scratch test failed. 0x00000000
+isp1760 4f000000.usb: can't setup: -19
+isp1760 4f000000.usb: USB bus 1 deregistered
+usbcore: registered new interface driver usb-storage
+ledtrig-cpu: registered to indicate activity on CPUs
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+NET: Registered PF_PACKET protocol family
+9pnet: Installing 9P2000 support
+Registering SWP/SWPB emulation handler
+aaci-pl041 10004000.aaci: ARM AC'97 Interface PL041 rev0 at 0x10004000, irq 32
+aaci-pl041 10004000.aaci: FIFO 512 entries
+mmci-pl18x 10005000.mmci: Got CD GPIO
+mmci-pl18x 10005000.mmci: Got WP GPIO
+mmci-pl18x 10005000.mmci: mmc0: PL181 manf 41 rev0 at 0x10005000 irq 33,34 (pio)
+10009000.uart: ttyAMA0 at MMIO 0x10009000 (irq = 37, base_baud = 0) is a PL011 rev1
+printk: console [ttyAMA0] enabled
+1000a000.uart: ttyAMA1 at MMIO 0x1000a000 (irq = 38, base_baud = 0) is a PL011 rev1
+1000b000.uart: ttyAMA2 at MMIO 0x1000b000 (irq = 39, base_baud = 0) is a PL011 rev1
+1000c000.uart: ttyAMA3 at MMIO 0x1000c000 (irq = 40, base_baud = 0) is a PL011 rev1
+rtc-pl031 10017000.rtc: registered as rtc0
+rtc-pl031 10017000.rtc: setting system clock to 2026-10-17T06:29:28 UTC (1792218568)
+amba 10020000.clcd: Fixing up cyclic dependency with 0-0039
+drm-clcd-pl111 10020000.clcd: DVI muxed to daughterboard 1 (core tile) CLCD
+drm-clcd-pl111 10020000.clcd: initializing Versatile Express PL111
+sii902x 0-0039: supply iovcc not found, using dummy regulator
+sii902x 0-0039: supply cvcc12 not found, using dummy regulator
+i2c i2c-0: Added multiplexed i2c bus 2
+drm-clcd-pl111 1001f000.clcd: assigned reserved memory node vram@4c000000
+drm-clcd-pl111 1001f000.clcd: using device-specific reserved memory
+drm-clcd-pl111 1001f000.clcd: core tile graphics present
+drm-clcd-pl111 1001f000.clcd: this device will be deactivated
+drm-clcd-pl111 1001f000.clcd: Versatile Express init failed - -19
+drm-clcd-pl111 10020000.clcd: DVI muxed to daughterboard 1 (core tile) CLCD
+drm-clcd-pl111 10020000.clcd: initializing Versatile Express PL111
+drm-clcd-pl111 10020000.clcd: found bridge on endpoint 0
+drm-clcd-pl111 10020000.clcd: Using non-panel bridge
+[drm] Initialized pl111 1.0.0 20170317 for 10020000.clcd on minor 0
+input: AT Raw Set 2 keyboard as /devices/platform/bus@40000000/bus@40000000:motherboard-bus@40000000/bus@40000000:motherboard-bus@40000000:iofpga@7,00000000/10006000.kmi/serio0/input/input0
+Console: switching to colour frame buffer device 128x48
+drm-clcd-pl111 10020000.clcd: [drm] fb0: pl111 frame buffer device
+ALSA device list:
+  #0: ARM AC'97 Interface PL041 rev0 at 0x10004000, irq 32
+Freeing unused kernel image (initmem) memory: 1024K
+Run /asm1/init as init process
+  with arguments:
+    /asm1/init
+  with environment:
+    HOME=/
+    TERM=linux
+asgn1_driver: loading out-of-tree module taints kernel.
+asgn1_driver: loaded major=241 mode=1
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+asgn1_driver: ioctl cmd=0x80404103 nr=3
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+asgn1_driver: ioctl cmd=0x4163 nr=99
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+asgn1_driver: ioctl cmd=0x80404103 nr=3
+asgn1_driver: ioctl cmd=0x80014101 nr=1
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x4100 nr=0
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x4100 nr=0
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: cleanup complete
+input: ImExPS/2 Generic Explorer Mouse as /devices/platform/bus@40000000/bus@40000000:motherboard-bus@40000000/bus@40000000:motherboard-bus@40000000:iofpga@7,00000000/10007000.kmi/serio1/input/input2
+asgn1_driver: loaded major=241 mode=1
+asgn1_driver: ioctl cmd=0x802c542a nr=42
+asgn1_driver: cleanup complete
+counter_driver: loaded major=10 minor=125
+counter_driver: read snapshot=0
+counter_driver: read snapshot=1
+counter_driver: set=100
+counter_driver: read snapshot=100
+counter_driver: set=0
+counter_driver: read snapshot=0
+counter_driver: set=100
+counter_driver: read snapshot=100
+counter_driver: set=2147483647
+counter_driver: set=0
+counter_driver: read snapshot=0
+counter_driver: read snapshot=1
+counter_driver: read snapshot=2
+counter_driver: read snapshot=3
+counter_driver: read snapshot=4
+counter_driver: read snapshot=5
+counter_driver: read snapshot=6
+counter_driver: read snapshot=7
+counter_driver: read snapshot=8
+counter_driver: read snapshot=9
+counter_driver: read snapshot=10
+counter_driver: read snapshot=11
+counter_driver: read snapshot=12
+counter_driver: read snapshot=13
+counter_driver: read snapshot=14
+counter_driver: read snapshot=15
+counter_driver: read snapshot=16
+counter_driver: read snapshot=17
+counter_driver: read snapshot=18
+counter_driver: read snapshot=19
+counter_driver: read snapshot=20
+counter_driver: read snapshot=21
+counter_driver: read snapshot=22
+counter_driver: read snapshot=23
+counter_driver: read snapshot=24
+counter_driver: read snapshot=25
+random: fast init done
+counter_driver: read snapshot=26
+counter_driver: read snapshot=27
+counter_driver: read snapshot=28
+counter_driver: read snapshot=29
+counter_driver: read snapshot=30
+counter_driver: read snapshot=31
+counter_driver: read snapshot=32
+counter_driver: read snapshot=33
+counter_driver: read snapshot=34
+counter_driver: read snapshot=35
+counter_driver: read snapshot=36
+counter_driver: read snapshot=37
+counter_driver: read snapshot=38
+counter_driver: read snapshot=39
+counter_driver: read snapshot=40
+counter_driver: read snapshot=41
+counter_driver: read snapshot=42
+counter_driver: read snapshot=43
+counter_driver: read snapshot=44
+counter_driver: read snapshot=45
+counter_driver: read snapshot=46
+counter_driver: read snapshot=47
+counter_driver: read snapshot=48
+counter_driver: read snapshot=49
+counter_driver: read snapshot=50
+counter_driver: read snapshot=51
+counter_driver: read snapshot=52
+counter_driver: read snapshot=53
+counter_driver: read snapshot=54
+counter_driver: read snapshot=55
+counter_driver: read snapshot=56
+counter_driver: read snapshot=57
+counter_driver: read snapshot=58
+counter_driver: read snapshot=59
+counter_driver: read snapshot=60
+counter_driver: read snapshot=61
+counter_driver: read snapshot=62
+counter_driver: read snapshot=63
+counter_driver: read snapshot=64
+counter_driver: read snapshot=65
+counter_driver: read snapshot=66
+counter_driver: read snapshot=67
+counter_driver: read snapshot=68
+counter_driver: read snapshot=69
+counter_driver: read snapshot=70
+counter_driver: read snapshot=71
+counter_driver: read snapshot=72
+counter_driver: read snapshot=73
+counter_driver: read snapshot=74
+counter_driver: read snapshot=75
+counter_driver: read snapshot=76
+counter_driver: read snapshot=77
+counter_driver: read snapshot=78
+counter_driver: read snapshot=79
+counter_driver: cleanup complete
+counter_driver: loaded major=10 minor=125
+counter_driver: read snapshot=0
+counter_driver: cleanup complete
+ASM1_DMESG_END
+ASM1_ALL_DONE
+Flash device refused suspend due to active operation (state 20)
+Flash device refused suspend due to active operation (state 20)
+reboot: Power down

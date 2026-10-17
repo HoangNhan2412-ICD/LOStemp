@@ -1,0 +1,21 @@
+# Chỉ theo dõi bài làm, công cụ tái lập và file nộp cuối cùng.
+/*
+!/.gitignore
+!/CHECKLIST.md
+!/submission/
+!/tools/
+!/output/
+
+/output/*
+!/output/SE200778_PhamVoHoangNhan_Asgn01.tar.gz
+!/output/SE200778_PhamVoHoangNhan_Asgn01_BaoCao.pdf
+!/output/final-validation.json
+
+# Giữ .ko và executable kiểm thử, bỏ các sản phẩm trung gian của Kbuild.
+/submission/**/*.o
+/submission/**/*.mod
+/submission/**/*.mod.c
+/submission/**/.*.cmd
+/submission/**/Module.symvers
+/submission/**/modules.order
+/tools/__pycache__/

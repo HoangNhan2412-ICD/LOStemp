@@ -1,0 +1,196 @@
++ insmod ./asgn1_driver.ko
+asgn1_driver: loading out-of-tree module taints kernel.
+asgn1_driver: loaded major=241 mode=1
++ grep '^asgn1_driver ' /proc/modules
+asgn1_driver 16384 0 - Live 0x7f000000 (O)
++ '[' '!' -c /dev/asgn1 ]
++ mknod /dev/asgn1 c 241 0
++ ls -l /dev/asgn1
+crw-r--r--    1 root     0         241,   0 Oct 17 06:29 [1;35m/dev/asgn1[m
++ ./asgn1_test
+PASS fd >= 0
+ABI stats_size=20 GET_STATS=0x80144101 nr=1 size=20
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+PASS ioctl(fd, ASGN1_GET_STATS, &s) == 0
+STATS open_count=1 write_count=0 read_count=0 buffer_len=0 last_write_size=0
+PASS s.open_count == 1 && s.write_count == 0 && s.read_count == 0 && s.buffer_len == 0
+PASS write(fd,"hello",5) == 5
+PASS fd >= 0
+PASS n == (ssize_t)strlen(expected)
+PASS !strcmp(text, expected)
+PASS read(fd, text, sizeof(text)) == 0
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+PASS ioctl(fd, ASGN1_GET_STATS, &s) == 0
+STATS open_count=2 write_count=1 read_count=1 buffer_len=5 last_write_size=5
+PASS s.write_count == 1 && s.read_count == 1 && s.buffer_len == 5 && s.last_write_size == 5
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+PASS ioctl(fd,ASGN1_SET_MODE,&mode) == 0
+PASS write(fd,"abc",3) == 3
+PASS fd >= 0
+PASS n == (ssize_t)strlen(expected)
+PASS !strcmp(text, expected)
+PASS read(fd, text, sizeof(text)) == 0
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+PASS ioctl(fd, ASGN1_GET_STATS, &s) == 0
+STATS open_count=3 write_count=2 read_count=2 buffer_len=11 last_write_size=3
+PASS s.buffer_len == 11 && s.last_write_size == 3
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+PASS ioctl(fd,ASGN1_SET_MODE,&mode) == 0
+PASS write(fd,"echo",4) == 4
+PASS fd >= 0
+PASS n == (ssize_t)strlen(expected)
+PASS !strcmp(text, expected)
+PASS read(fd, text, sizeof(text)) == 0
+asgn1_driver: ioctl cmd=0x80404103 nr=3
+PASS ioctl(fd,ASGN1_GET_VERSION,version.text) == 0
+PASS memchr(version.text,0,64) != NULL
+PASS version.guard[i] == 0xa5
+PASS version.guard[i] == 0xa5
+PASS version.guard[i] == 0xa5
+PASS version.guard[i] == 0xa5
+PASS version.guard[i] == 0xa5
+PASS version.guard[i] == 0xa5
+PASS version.guard[i] == 0xa5
+PASS version.guard[i] == 0xa5
+VERSION asgn1_driver v1.0 - SE200778
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+PASS ioctl(fd,ASGN1_SET_MODE,&mode) == -1 && errno == EINVAL
+asgn1_driver: ioctl cmd=0x4163 nr=99
+PASS ioctl(fd,_IO(ASGN1_MAGIC,99),0) == -1 && errno == ENOTTY
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+PASS ioctl(fd,ASGN1_GET_STATS,(void *)1) == -1 && errno == EFAULT
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+PASS ioctl(fd,ASGN1_SET_MODE,(void *)1) == -1 && errno == EFAULT
+asgn1_driver: ioctl cmd=0x80404103 nr=3
+PASS ioctl(fd,ASGN1_GET_VERSION,(void *)1) == -1 && errno == EFAULT
+asgn1_driver: ioctl cmd=0x80014101 nr=1
+PASS ioctl(fd,_IOR(ASGN1_MAGIC,1,char),&s) == -1 && errno == ENOTTY
+PASS write(fd,large,sizeof(large)) == -1 && errno == EMSGSIZE
+PASS fd >= 0
+PASS n == (ssize_t)strlen(expected)
+PASS !strcmp(text, expected)
+PASS read(fd, text, sizeof(text)) == 0
+PASS syscall(SYS_write,fd,(void *)1,4) == -1 && errno == EFAULT
+PASS fd >= 0
+PASS n == (ssize_t)strlen(expected)
+PASS !strcmp(text, expected)
+PASS read(fd, text, sizeof(text)) == 0
+PASS write(fd,large,sizeof(large)-1) == sizeof(large)-1
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+PASS ioctl(fd, ASGN1_GET_STATS, &s) == 0
+STATS open_count=6 write_count=4 read_count=5 buffer_len=1023 last_write_size=1023
+PASS s.buffer_len == 1023
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+PASS ioctl(fd,ASGN1_SET_MODE,&mode) == 0
+PASS write(fd,large,1016) == -1 && errno == EMSGSIZE
+PASS write(fd,large,1015) == 1015
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+PASS ioctl(fd, ASGN1_GET_STATS, &s) == 0
+STATS open_count=6 write_count=5 read_count=5 buffer_len=1023 last_write_size=1015
+PASS s.buffer_len == 1023 && s.last_write_size == 1015
+asgn1_driver: ioctl cmd=0x4100 nr=0
+PASS ioctl(fd,ASGN1_RESET_BUFFER,0) == 0
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+PASS ioctl(fd, ASGN1_GET_STATS, &s) == 0
+STATS open_count=6 write_count=0 read_count=0 buffer_len=0 last_write_size=0
+PASS s.write_count == 0 && s.read_count == 0 && s.buffer_len == 0 && s.last_write_size == 0
+PASS s.open_count > 0
+PASS fd >= 0
+PASS n == (ssize_t)strlen(expected)
+PASS !strcmp(text, expected)
+PASS read(fd, text, sizeof(text)) == 0
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+PASS ioctl(fd,ASGN1_SET_MODE,&mode) == 0
+PASS write(fd,"abcdef",6) == 6
+PASS fd >= 0
+PASS read(rd,small,2) == 2
+PASS read(rd,small+2,4) == 4
+PASS !strcmp(small,"abcdef")
+PASS read(rd,small,1) == 0
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+PASS ioctl(fd, ASGN1_GET_STATS, &s) == 0
+STATS open_count=8 write_count=1 read_count=2 buffer_len=6 last_write_size=6
+PASS children[i] >= 0
+PASS children[i] >= 0
+PASS children[i] >= 0
+PASS children[i] >= 0
+PASS children[i] >= 0
+PASS children[i] >= 0
+PASS children[i] >= 0
+PASS waitpid(children[i],&status,0) == children[i]
+PASS WIFEXITED(status) && WEXITSTATUS(status) == 0
+PASS waitpid(children[i],&status,0) == children[i]
+PASS WIFEXITED(status) && WEXITSTATUS(status) == 0
+PASS children[i] >= 0
+PASS waitpid(children[i],&status,0) == children[i]
+PASS WIFEXITED(status) && WEXITSTATUS(status) == 0
+PASS waitpid(children[i],&status,0) == children[i]
+PASS WIFEXITED(status) && WEXITSTATUS(status) == 0
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+PASS ioctl(fd, ASGN1_GET_STATS, &s) == 0
+STATS open_count=12 write_count=401 read_count=2 buffer_len=4 last_write_size=4
+PASS s.write_count == before.write_count+400
+PASS s.open_count == before.open_count+4
+asgn1_driver: ioctl cmd=0x4100 nr=0
+PASS ioctl(fd,ASGN1_RESET_BUFFER,0) == 0
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+PASS ioctl(fd, ASGN1_GET_STATS, &s) == 0
+STATS open_count=12 write_count=0 read_count=0 buffer_len=0 last_write_size=0
+PASS s.buffer_len == 0 && s.write_count == 0 && s.read_count == 0
+TASK1_C_TESTS_PASS
++ cat /dev/asgn1
++ test -z 
++ exec
++ rmmod asgn1_driver
+rmmod: remove 'asgn1_driver': Resource temporarily unavailable
++ grep '^asgn1_driver ' /proc/modules
+asgn1_driver 16384 2 - Live 0x7f000000 (O)
++ exec
++ rmmod asgn1_driver
+asgn1_driver: cleanup complete
+input: ImExPS/2 Generic Explorer Mouse as /devices/platform/bus@40000000/bus@40000000:motherboard-bus@40000000/bus@40000000:motherboard-bus@40000000:iofpga@7,00000000/10007000.kmi/serio1/input/input2
++ test '!' -e /proc/asgn1_info
++ grep -q '^asgn1_driver ' /proc/modules
++ + grep asgn1_driver:
+dmesg
+asgn1_driver: loading out-of-tree module taints kernel.
+asgn1_driver: loaded major=241 mode=1
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+asgn1_driver: ioctl cmd=0x80404103 nr=3
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+asgn1_driver: ioctl cmd=0x4163 nr=99
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+asgn1_driver: ioctl cmd=0x80404103 nr=3
+asgn1_driver: ioctl cmd=0x80014101 nr=1
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x4100 nr=0
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x40044102 nr=2
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: ioctl cmd=0x4100 nr=0
+asgn1_driver: ioctl cmd=0x80144101 nr=1
+asgn1_driver: cleanup complete
++ dmesg
++ grep 'asgn1_driver: cleanup complete'
+asgn1_driver: cleanup complete
++ insmod ./asgn1_driver.ko
+asgn1_driver: loaded major=241 mode=1
++ cat /dev/asgn1
++ test -z 
++ printf default-echo
+asgn1_driver: ioctl cmd=0x802c542a nr=42
++ cat /dev/asgn1
++ test default-echo '=' default-echo
++ rmmod asgn1_driver
+asgn1_driver: cleanup complete
++ echo TASK1_SCRIPT_PASS
+TASK1_SCRIPT_PASS
+ASM1_TASK1_RC=0

@@ -1,0 +1,4 @@
+make: Entering directory '/home/nhan/Documents/Losproject/practice/submission/task1_ioctl'
+make -C /home/nhan/Documents/Losproject/practice/environment/build-dyk M=/home/nhan/Documents/Losproject/practice/submission/task1_ioctl ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabihf- modules
+arm-none-linux-gnueabihf-gcc -static -O2 -Wall -Wextra -Werror -o asgn1_test asgn1_test.c
+make: Leaving directory '/home/nhan/Documents/Losproject/practice/submission/task1_ioctl'

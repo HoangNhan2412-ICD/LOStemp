@@ -1,0 +1,9 @@
+{
+  "qemu_returncode": 0,
+  "task1": true,
+  "task2": true,
+  "dyk_kernel": true,
+  "no_kernel_oops": true,
+  "originals_unchanged": true,
+  "completed": true
+}

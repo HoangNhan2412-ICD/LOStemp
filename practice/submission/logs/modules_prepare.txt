@@ -1,0 +1,2 @@
+make: Entering directory '/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15'
+make: Leaving directory '/home/nhan/Documents/Losproject/practice/environment/sources/linux-5.15'

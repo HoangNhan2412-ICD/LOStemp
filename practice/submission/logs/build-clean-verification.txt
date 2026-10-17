@@ -1,0 +1,37 @@
+$ make -C /home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task1_ioctl KDIR=/home/nhan/Documents/Losproject/practice/environment/build-dyk all
+make: Entering directory '/home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task1_ioctl'
+make -C /home/nhan/Documents/Losproject/practice/environment/build-dyk M=/home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task1_ioctl ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabihf- modules
+arm-none-linux-gnueabihf-gcc -static -O2 -Wall -Wextra -Werror -o asgn1_test asgn1_test.c
+make: Leaving directory '/home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task1_ioctl'
+PASS build produces module and static ARM test executable
+$ make -C /home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task1_ioctl KDIR=/home/nhan/Documents/Losproject/practice/environment/build-dyk clean
+make: Entering directory '/home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task1_ioctl'
+make -C /home/nhan/Documents/Losproject/practice/environment/build-dyk M=/home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task1_ioctl ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabihf- clean
+rm -f asgn1_test
+make: Leaving directory '/home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task1_ioctl'
+PASS clean removes generated products and preserves source
+$ make -C /home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task1_ioctl KDIR=/home/nhan/Documents/Losproject/practice/environment/build-dyk all
+make: Entering directory '/home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task1_ioctl'
+make -C /home/nhan/Documents/Losproject/practice/environment/build-dyk M=/home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task1_ioctl ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabihf- modules
+arm-none-linux-gnueabihf-gcc -static -O2 -Wall -Wextra -Werror -o asgn1_test asgn1_test.c
+make: Leaving directory '/home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task1_ioctl'
+PASS build produces module and static ARM test executable
+$ make -C /home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task2_misc KDIR=/home/nhan/Documents/Losproject/practice/environment/build-dyk all
+make: Entering directory '/home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task2_misc'
+make -C /home/nhan/Documents/Losproject/practice/environment/build-dyk M=/home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task2_misc ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabihf- modules
+arm-none-linux-gnueabihf-gcc -static -O2 -Wall -Wextra -Werror -o counter_test counter_test.c
+make: Leaving directory '/home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task2_misc'
+PASS build produces module and static ARM test executable
+$ make -C /home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task2_misc KDIR=/home/nhan/Documents/Losproject/practice/environment/build-dyk clean
+make: Entering directory '/home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task2_misc'
+make -C /home/nhan/Documents/Losproject/practice/environment/build-dyk M=/home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task2_misc ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabihf- clean
+rm -f counter_test
+make: Leaving directory '/home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task2_misc'
+PASS clean removes generated products and preserves source
+$ make -C /home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task2_misc KDIR=/home/nhan/Documents/Losproject/practice/environment/build-dyk all
+make: Entering directory '/home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task2_misc'
+make -C /home/nhan/Documents/Losproject/practice/environment/build-dyk M=/home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task2_misc ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabihf- modules
+arm-none-linux-gnueabihf-gcc -static -O2 -Wall -Wextra -Werror -o counter_test counter_test.c
+make: Leaving directory '/home/nhan/Documents/Losproject/practice/output/clean-check-20261017-022920/task2_misc'
+PASS build produces module and static ARM test executable
+BUILD_CLEAN_VERIFIED
